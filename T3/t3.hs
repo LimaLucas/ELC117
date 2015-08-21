@@ -33,3 +33,6 @@ htmlListItems x = map (\n -> "<LI>" ++ n ++ "<LI>") x
 
 --takeWhile :: (a -> Boll) -> [a] -> [a]
 --takeWhile x y = filter(x) y
+
+listaLazaro :: [String] -> [String]
+listaLazaro x = filter (\n -> last n == 'a' ) x

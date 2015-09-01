@@ -39,6 +39,7 @@ semVogais :: String -> String
 semVogais "" = ""
 semVogais (x:xs)
 	| contidoCharStr x "aeiou"	= semVogais xs
+	| contidoCharStr x "AEIOU"	= semVogais xs
 	| otherwise					= x : semVogais xs
 
 ----------------- EXERCÍCIO 4 -----------------

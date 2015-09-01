@@ -8,7 +8,7 @@ contaChar :: [Char] -> Char -> Int
 contaChar []_ = 0
 contaChar x c
 	| head x == c	= 1 + contaChar (tail x) c
-	| otherwise		= contaChar (tail x) c
+	| otherwise	= contaChar (tail x) c
 
 repeteChar :: Int -> Char -> [Char]
 repeteChar 0_ = []

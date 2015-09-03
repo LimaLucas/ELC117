@@ -31,7 +31,7 @@ charFound a x = length (filter (== a) x ) > 0
 htmlListItems :: [String] -> [String]
 htmlListItems x = map (\n -> "<LI>" ++ n ++ "<LI>") x
 
---takeWhile :: (a -> Boll) -> [a] -> [a]
+--takeWhile :: (a -> Bool) -> [a] -> [a]
 --takeWhile x y = filter(x) y
 
 listaLazaro :: [String] -> [String]

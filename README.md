@@ -6,4 +6,4 @@ Sistemas de Informação da Universidade Federal de Santa Maria (UFSM).
 <b>Linguagens utilizadas nos trabalhos:</b>
 
 - C: T1
-- Haskell: T3, T4
+- Haskell: T3, T4, T5

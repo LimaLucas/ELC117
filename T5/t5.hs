@@ -80,7 +80,7 @@ pairWithAll x (y:ys) = (x, y) : pairWithAll x ys
 
 ----------------- EXERCÍCIO 10 -----------------
 genRects :: Int -> (Int, Int) -> [(Float, Float, Float, Float)]
-genRects n xy = genRectsAux (n+1) (((fst xy)/1), ((snd xy)/1))
+genRects n xy = genRectsAux n (fromIntegral(fst xy)/1, fromIntegral(snd xy)/1)
 
 genRectsAux :: Int -> (Float, Float) -> [(Float, Float, Float, Float)]
 genRectsAux 0_ = []
@@ -90,3 +90,5 @@ genRectsAux n xy =
 		x = fst xy
 		y = snd xy
 	in (x, y, largAlt, largAlt) : genRectsAux (n-1) (x+largAlt, y)
+
+----------------- EXERCÍCIO 11 -----------------

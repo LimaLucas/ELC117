@@ -92,3 +92,13 @@ genRectsAux n xy =
 	in (x, y, largAlt, largAlt) : genRectsAux (n-1) (x+largAlt, y)
 
 ----------------- EXERCÍCIO 11 -----------------
+--tupListup :: [(Int,Int)] -> ([Int])
+--tupListup = 
+
+tupLis :: [(Int, Int)] -> [Int]
+tupLis [] = []
+tupLis (x:xs) = (fst x):(snd x):(tupLis xs)
+
+----------------- EXERCÍCIO 12 -----------------
+
+----------------- EXERCÍCIO 13 -----------------

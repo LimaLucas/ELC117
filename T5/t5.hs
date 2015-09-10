@@ -80,24 +80,19 @@ pairWithAll x (y:ys) = (x, y) : pairWithAll x ys
 
 ----------------- EXERCÍCIO 10 -----------------
 genRects :: Int -> (Int, Int) -> [(Float, Float, Float, Float)]
-genRects n xy = genRectsAux n (fromIntegral(fst xy)/1, fromIntegral(snd xy)/1)
+genRects n (x,y) = genRectsAux n (fromIntegral x/1, fromIntegral y/1)
 
 genRectsAux :: Int -> (Float, Float) -> [(Float, Float, Float, Float)]
 genRectsAux 0_ = []
-genRectsAux n xy =
-	let 
-		largAlt = 5.5
-		x = fst xy
-		y = snd xy
-	in (x, y, largAlt, largAlt) : genRectsAux (n-1) (x+largAlt, y)
+genRectsAux n (x,y) = (x, y, largAlt, largAlt) : genRectsAux (n-1) (x+largAlt, y)
+	where 	largAlt = 5.5
 
 ----------------- EXERCÍCIO 11 -----------------
---tupListup :: [(Int,Int)] -> ([Int])
---tupListup = 
-
-tupLis :: [(Int, Int)] -> [Int]
-tupLis [] = []
-tupLis (x:xs) = (fst x):(snd x):(tupLis xs)
+tupLisToLisTup :: [(a,b)] -> ([a], [b])
+tupLisToLisTup [] = ([],[])
+tupLisToLisTup ((x1,x2):xs) = (n, m)
+	where	n = x1:(fst (tupLisToLisTup xs))
+		m = x2:(snd(tupLisToLisTup xs))
 
 ----------------- EXERCÍCIO 12 -----------------
 

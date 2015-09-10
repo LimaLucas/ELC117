@@ -95,5 +95,9 @@ tupLisToLisTup ((x1,x2):xs) = (n, m)
 		m = x2:(snd(tupLisToLisTup xs))
 
 ----------------- EXERCÍCIO 12 -----------------
+tupLisToLisTup' :: [(a,b)] -> ([a], [b])
+tupLisToLisTup' n = ([ fst x | x <- n], [ snd x | x <- n])
 
 ----------------- EXERCÍCIO 13 -----------------
+tupLisToLisTup'' :: [(a,b)] -> ([a], [b])
+tupLisToLisTup'' n = ( map (\x -> fst x) n , map (\x -> snd x) n )

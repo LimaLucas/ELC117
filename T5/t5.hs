@@ -100,4 +100,4 @@ tupLisToLisTup' n = ([ fst x | x <- n], [ snd x | x <- n])
 
 ----------------- EXERCÍCIO 13 -----------------
 tupLisToLisTup'' :: [(a,b)] -> ([a], [b])
-tupLisToLisTup'' n = ( map (\x -> fst x) n , map (\x -> snd x) n )
+tupLisToLisTup'' n = ( map (fst) n , map (snd) n )

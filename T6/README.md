@@ -36,7 +36,7 @@ Requisitos:
 
 <h3>Parte 3 (25%)</h3>
 
-Nesta parte, você deverá implementar um programa para criar <b> duas novas paletas ou figuras coloridas,</b> usando diferentes esquemas de cores e formatos. Essas novas figuras devem ser bem diferentes das anteriores (partes 1 e 3), mas também <b>não devem</b> ter posições e cores definidas manualmente. Use sua criatividade, busque mais informações sobre representação de cores e estenda os programas anteriores (a nota desta parte será proporcional ao atendimento a esses quesitos).
+Nesta parte, você deverá implementar um programa para criar <b> duas novas paletas ou figuras coloridas,</b> usando diferentes esquemas de cores e formatos. Essas novas figuras devem ser bem diferentes das anteriores (partes 1 e 2), mas também <b>não devem</b> ter posições e cores definidas manualmente. Use sua criatividade, busque mais informações sobre representação de cores e estenda os programas anteriores (a nota desta parte será proporcional ao atendimento a esses quesitos).
 
 Algumas ideias:
 

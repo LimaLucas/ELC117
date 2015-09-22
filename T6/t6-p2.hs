@@ -32,9 +32,9 @@ cellPositions lp cp lc cc w h cellNum =
 -- Gera o estilo de cada célula, variando brilho e saturação da cor.
 -- Baseado no esquema de cores HSL
 cellStyle :: Float -> Float -> Float -> [(Float, Float)] -> [String]
-cellStyle qtdPalette l c cellNum = ["fill:hsl(" ++ show ((360/qtdPalette)*(palette)) ++ ", " -- Cor
+cellStyle qntPalette l c cellNum = ["fill:hsl(" ++ show ((360/qntPalette)*(palette)) ++ ", " -- Cor
   ++ show (snd cell *(100/c)) ++ "%, " ++ show (fst cell *(100/l)) -- Saturação e Brilho
-  ++ "%);stroke:gray" | cell <- reverse cellNum, palette <- [0.0..(qtdPalette-1)]] -- Contorno
+  ++ "%);stroke:gray" | cell <- reverse cellNum, palette <- [0.0..(qntPalette-1)]] -- Contorno
 
 -- Função principal do código para gerar a paleta de cores SVG
 -- Alteração das variáveis afeta tamanho, quantidade de células e cor base da paleta
@@ -42,11 +42,11 @@ main :: IO ()
 main = do
   let
     -- Atributos gerais das paletas
-    qtdPalette = 4                                        -- Qtde de paleta de cores (1,2,4,6,9,12,16...)
-    lPalette = fromIntegral(round (sqrt qtdPalette))      -- Qtde de LINHAS com paletas (MAX 360)
-    cPalette_ = fromIntegral(round (qtdPalette/lPalette)) -- Qtde parcial de colunas com paletas
+    qntPalette = 4  -- Qtde de paletas (Necessário ser 1 nro que forme 1 retangulo inteiro. Ex: 1,2,4,6,9,12,16...)
+    lPalette = fromIntegral(round (sqrt qntPalette))      -- Qtde de LINHAS com paletas (MAX 360)
+    cPalette_ = fromIntegral(round (qntPalette/lPalette)) -- Qtde parcial de colunas com paletas
     cPalette                                              -- Qtde de COLUNAS com paletas
-      | qtdPalette/lPalette > cPalette_ = cPalette_ + 1 
+      | qntPalette/lPalette > cPalette_ = cPalette_ + 1 
       | otherwise = cPalette_
 
     -- Atributos de cada paleta
@@ -61,7 +61,7 @@ main = do
 
     -- Aplicação dos atributos e criação das paletas
     cellNum = cellNumeration lCell cCell
-    style = cellStyle qtdPalette (lCell-1) (cCell-1) cellNum
+    style = cellStyle qntPalette (lCell-1) (cCell-1) cellNum
     rects = zip style [(xy, width, height) 
       | xy <- cellPositions lPalette cPalette lCell cCell width height cellNum]
     -- Exemplo de elemento contido em rects = [("fill:hsl...",((1.0,1.0),40.0,20.0))]

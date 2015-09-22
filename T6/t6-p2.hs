@@ -36,14 +36,14 @@ cellStyle qntPalette l c cellNum = ["fill:hsl(" ++ show ((360/qntPalette)*(palet
   ++ show (snd cell *(100/c)) ++ "%, " ++ show (fst cell *(100/l)) -- Saturação e Brilho
   ++ "%);stroke:gray" | cell <- reverse cellNum, palette <- [0.0..(qntPalette-1)]] -- Contorno
 
--- Função principal do código para gerar a paleta de cores SVG
+-- Função principal do código para gerar a matriz de paletas de cores SVG
 -- Alteração das variáveis afeta tamanho, quantidade de células e cor base da paleta
 main :: IO ()
 main = do
   let
-    -- Atributos gerais das paletas
-    qntPalette = 4  -- Qtde de paletas (Necessário ser 1 nro que forme 1 retangulo inteiro. Ex: 1,2,4,6,9,12,16...)
-    lPalette = fromIntegral(round (sqrt qntPalette))      -- Qtde de LINHAS com paletas (MAX 360)
+    -- Atributos gerais de cada paleta
+    qntPalette = 4  -- Qtde de paletas (Necessário ser nro que forme uma matriz completa. Ex: 1,2,4,6,9,12,16...)
+    lPalette = fromIntegral(round (sqrt qntPalette))      -- Qtde de LINHAS com paletas
     cPalette_ = fromIntegral(round (qntPalette/lPalette)) -- Qtde parcial de colunas com paletas
     cPalette                                              -- Qtde de COLUNAS com paletas
       | qntPalette/lPalette > cPalette_ = cPalette_ + 1 

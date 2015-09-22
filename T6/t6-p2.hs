@@ -42,10 +42,10 @@ main :: IO ()
 main = do
   let
     -- Atributos gerais das paletas
-    qtdPalette = 4                                      -- Qtde de paleta de cores
-    lPalette = fromIntegral(round (sqrt qtdPalette))    -- Qtde de LINHAS com paletas (MAX 360)
-    cPalette_ = fromIntegral(round (qtdPalette/lPalette))  -- Qtde parcial de colunas com paletas
-    cPalette                                            -- Qtde de COLUNAS com paletas
+    qtdPalette = 4                                        -- Qtde de paleta de cores (1,2,4,6,9,12,16...)
+    lPalette = fromIntegral(round (sqrt qtdPalette))      -- Qtde de LINHAS com paletas (MAX 360)
+    cPalette_ = fromIntegral(round (qtdPalette/lPalette)) -- Qtde parcial de colunas com paletas
+    cPalette                                              -- Qtde de COLUNAS com paletas
       | qtdPalette/lPalette > cPalette_ = cPalette_ + 1 
       | otherwise = cPalette_
 

@@ -30,7 +30,7 @@ main :: IO ()
 main = do
   let
     maxRad = 360;       -- Raio máximo, do ultimo circulo exterior
-    qntCircle = 360;    -- Número de circulos sobrepostos
+    qntCircle = 60;    -- Número de circulos sobrepostos
 
     style = elemStyle maxRad qntCircle
     circles = zip style (reverse (elemRadius maxRad qntCircle))

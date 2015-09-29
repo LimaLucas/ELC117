@@ -38,11 +38,20 @@ a_pot(N,N1,[H|T]) :- H is 2^N1, N2 is N1+1, a_pot(N,N2,T), !.
 
 %% - EXERCÍCIO 5
 positivos([],[]).
+positivos([H|T],L) :- H =< 0, positivos(T,L), !.
 positivos([H|T],[H1|T1]) :- H > 0, H1 is H, positivos(T,T1), !.
-positivos([_|T],L) :- positivos(T,L).
 
 %% - EXERCÍCIO 6
-mesmaPosicao(X,[H1|_],[H2|_]) :- X = H1, X = H2.
+mesmaPosicao(X,[H1|_],[H2|_]) :- X == H1, X == H2.
 mesmaPosicao(X,[_|T1],[_|T2]) :- mesmaPosicao(X,T1,T2), !.
 
 %% - EXERCÍCIO 7
+intercala(_,[],[]).
+intercala(X,[H|T],[H1|T1]) :- H1 = H, a_intercala(X,T,T1), !.
+
+a_intercala(_,[],[]).
+a_intercala(X,T,[H1|T1]) :- H1 = X, intercala(X,T,T1), !.
+
+%% - EXERCÍCIO 8
+
+

@@ -34,7 +34,7 @@ countdown(N,[H|T]) :- H is N, A is N-1, countdown(A,T), !.
 potencias(N,L) :- a_pot(N,0,L).
 
 a_pot(N,N1,[]) :- N =:= N1.
-a_pot(N,N1,[H|T]) :- H is 2^N1, N2 is N1+1, pot(N,N2,T), !.
+a_pot(N,N1,[H|T]) :- H is 2^N1, N2 is N1+1, a_pot(N,N2,T), !.
 
 %% - EXERCÍCIO 5
 positivos([],[]).

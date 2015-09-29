@@ -28,9 +28,17 @@ ziplus([H1|T1],[H2|T2],[H|T]) :- H is H1+H2, ziplus(T1,T2,T).
 
 %% - EXERCÍCIO 3
 countdown(0,[0]).
-countdown(N,[H|T]) :- H is N, A is N-1, countdown(A,T).
+countdown(N,[H|T]) :- H is N, A is N-1, countdown(A,T), !.
 
 %% - EXERCÍCIO 4
-potencias(0,[]).
-potencias(1,[1]).
-potencias(N, [H|T]) :- A is N-1, potencias(A, T), H is T*2.
+potencias(N,L) :- a_pot(N,0,L).
+
+a_pot(N,N1,[]) :- N =:= N1.
+a_pot(N,N1,[H|T]) :- H is 2^N1, N2 is N1+1, pot(N,N2,T), !.
+
+%% - EXERCÍCIO 5
+positivos([],[]).
+positivos([H|T],[H1|T1]) :- H > 0, H1 is H, positivos(T,T1), !.
+positivos([_|T],L) :- positivos(T,L).
+
+%% - EXERCÍCIO 6

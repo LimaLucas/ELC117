@@ -42,3 +42,7 @@ positivos([H|T],[H1|T1]) :- H > 0, H1 is H, positivos(T,T1), !.
 positivos([_|T],L) :- positivos(T,L).
 
 %% - EXERCÍCIO 6
+mesmaPosicao(X,[H1|_],[H2|_]) :- X = H1, X = H2.
+mesmaPosicao(X,[_|T1],[_|T2]) :- mesmaPosicao(X,T1,T2), !.
+
+%% - EXERCÍCIO 7

@@ -2,7 +2,7 @@
 
 Neste trabalho, você vai fazer programas em Haskell para gerar arquivos SVG com paletas de cores, como no exemplo ao lado. Os programas deverão implementar funções para definir figuras geométricas (retângulos, etc.) e suas cores, formando assim uma paleta. Em outras palavras, você <b>não deverá</b> codificar posições e cores manualmente, enumerando-as uma por uma, mas sim definir funções para calculá-las a partir de argumentos (por exemplo: quantidade de cores, linhas e colunas da paleta, etc.).
 
-<center>-![alt text](http://www-usr.inf.ufsm.br/~andrea/elc117/src/haskell/green-cyans.png)</center>
+-![alt text](http://www-usr.inf.ufsm.br/~andrea/elc117/src/haskell/green-cyans.png)
 
 O trabalho será dividido em 3 partes, com pesos diferentes. Cada parte deverá ser entregue em um arquivo separado, conforme instruções abaixo. Preferencialmente, você deverá usar <b>funções de alta ordem e list comprehension</b> em vez de recursão.
 
@@ -11,7 +11,7 @@ No material de apoio você encontrará um código em Haskell que faz operações
 
 Implemente um programa que gere uma paleta de cores semelhante a esta abaixo, extraída <a href="http://www.w3.org/TR/css3-color/#hsl-color" target="_blank">deste site</a>.
 
-<center>-![alt text](http://www-usr.inf.ufsm.br/~andrea/elc117/src/haskell/cyan-blues.png)<center>
+-![alt text](http://www-usr.inf.ufsm.br/~andrea/elc117/src/haskell/cyan-blues.png)
 
  Requisitos:
 
@@ -24,7 +24,7 @@ Implemente um programa que gere uma paleta de cores semelhante a esta abaixo, ex
 Implemente um programa para gerar paletas de diferentes matizes, num mesmo arquivo, conforme o exemplo abaixo. Em outras palavras, você deverá gerar uma única figura com diferentes paletas. Não é necessário incluir texto na figura. 
 
 
-<center>-![alt text](http://www-usr.inf.ufsm.br/~andrea/elc117/src/haskell/hsl.png)</center>
+-![alt text](http://www-usr.inf.ufsm.br/~andrea/elc117/src/haskell/hsl.png)
 
 
 

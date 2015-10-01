@@ -7,4 +7,4 @@ Sistemas de Informação da Universidade Federal de Santa Maria (UFSM).
 
 - C: T1
 - Haskell: T3, T4, T5, T6
-- Prolog: T7
+- Prolog: T7, T8

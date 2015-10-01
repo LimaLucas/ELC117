@@ -32,11 +32,11 @@ combine (n:ns) (x:xs) = (n, x) : combine ns xs
 
 ----------------- EXERCÍCIO 7 -----------------
 numera :: [String] -> [(Int, String)]
-numera x = zip (auxNumera (length x)) x
+numera x = zip (a_Numera (length x)) x
 
-auxNumera :: Int -> [Int]
-auxNumera 0 = []
-auxNumera n = auxNumera (n-1) ++ [n]
+a_Numera :: Int -> [Int]
+a_Numera 0 = []
+a_Numera n = a_Numera (n-1) ++ [n]
 
 ----------------- EXERCÍCIO 8 -----------------
 {-
@@ -80,11 +80,11 @@ pairWithAll x (y:ys) = (x, y) : pairWithAll x ys
 
 ----------------- EXERCÍCIO 10 -----------------
 genRects :: Int -> (Int, Int) -> [(Float, Float, Float, Float)]
-genRects n (x,y) = genRectsAux n (fromIntegral x/1, fromIntegral y/1)
+genRects n (x,y) = a_genRects n (fromIntegral x/1, fromIntegral y/1)
 
-genRectsAux :: Int -> (Float, Float) -> [(Float, Float, Float, Float)]
-genRectsAux 0_ = []
-genRectsAux n (x,y) = (x, y, largAlt, largAlt) : genRectsAux (n-1) (x+largAlt, y)
+a_genRects :: Int -> (Float, Float) -> [(Float, Float, Float, Float)]
+a_genRects 0_ = []
+a_genRects n (x,y) = (x, y, largAlt, largAlt) : a_genRects (n-1) (x+largAlt, y)
 	where 	largAlt = 5.5
 
 ----------------- EXERCÍCIO 11 -----------------

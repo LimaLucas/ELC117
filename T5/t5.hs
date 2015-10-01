@@ -88,16 +88,16 @@ a_genRects n (x,y) = (x, y, largAlt, largAlt) : a_genRects (n-1) (x+largAlt, y)
 	where 	largAlt = 5.5
 
 ----------------- EXERCÍCIO 11 -----------------
-tupLisToLisTup :: [(a,b)] -> ([a], [b])
-tupLisToLisTup [] = ([],[])
-tupLisToLisTup ((x1,x2):xs) = (n, m)
-	where	n = x1:(fst (tupLisToLisTup xs))
-		m = x2:(snd(tupLisToLisTup xs))
+lisTupToTupLis :: [(a,b)] -> ([a], [b])
+lisTupToTupLis [] = ([],[])
+lisTupToTupLis ((x1,x2):xs) = (n, m)
+	where	n = x1:(fst (lisTupToTupLis xs))
+		m = x2:(snd(lisTupToTupLis xs))
 
 ----------------- EXERCÍCIO 12 -----------------
-tupLisToLisTup' :: [(a,b)] -> ([a], [b])
-tupLisToLisTup' n = ([ fst x | x <- n], [ snd x | x <- n])
+lisTupToTupLis' :: [(a,b)] -> ([a], [b])
+lisTupToTupLis' n = ([ fst x | x <- n], [ snd x | x <- n])
 
 ----------------- EXERCÍCIO 13 -----------------
-tupLisToLisTup'' :: [(a,b)] -> ([a], [b])
-tupLisToLisTup'' n = ( map (fst) n , map (snd) n )
+lisTupToTupLis'' :: [(a,b)] -> ([a], [b])
+lisTupToTupLis'' n = ( map (fst) n , map (snd) n )

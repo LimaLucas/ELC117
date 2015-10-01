@@ -100,4 +100,4 @@ lisTupToTupLis' n = ([ fst x | x <- n], [ snd x | x <- n])
 
 ----------------- EXERCÍCIO 13 -----------------
 lisTupToTupLis'' :: [(a,b)] -> ([a], [b])
-lisTupToTupLis'' n = ( map (fst) n , map (snd) n )
+lisTupToTupLis'' n = (map fst n, map snd n)

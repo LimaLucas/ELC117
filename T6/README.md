@@ -9,7 +9,7 @@ O trabalho será dividido em 3 partes, com pesos diferentes. Cada parte deverá 
 No material de apoio você encontrará um código em Haskell que faz operações de escrita em arquivo. Se desejar, você poderá reutilizar este código, alterando-o e completando-o para obter a funcionalidade desejada.
 <h3>Parte 1 (50%)</h3>
 
-Implemente um programa que gere uma paleta de cores semelhante a esta abaixo, extraída deste site: http://www.w3.org/TR/css3-color/#hsl-color
+Implemente um programa que gere uma paleta de cores semelhante a esta abaixo, extraída <a href="http://www.w3.org/TR/css3-color/#hsl-color" target="_blank">deste site</a>.
 
 -![alt text](http://www-usr.inf.ufsm.br/~andrea/elc117/src/haskell/cyan-blues.png)
 

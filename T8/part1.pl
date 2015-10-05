@@ -33,7 +33,7 @@ disponivel(D,9) :- D = seg; D = ter; D = qua; D = qui; D = sex.
 antes(D1,H1,D2,H2) :- dia(D1,N1), dia(D2,N2), (N1<N2; (N1=N2, H1<H2)).
 
 solucao(Testes) :- 
-	Testes = [_, _, _, _, _, _, _],
+	Testes = [_, _, _, _, _],
     member(teste(sara, ter, 9), Testes),
 
     member(teste(pilar, DP, HP), Testes), 
@@ -51,6 +51,7 @@ solucao(Testes) :-
     disponivel(DN,HN), disponivel(DP,HP),
     disponivel(DR,HR). 
 
+%% Consulta: member((rute, seg, 8), solucao(T)), member((tina, ter, 8), solucao(T)), member((pilar, qui, 8), solucao(T)), member((mel, sex, 8), solucao(T)).
 %% ------------------------------------------
 
 /* QUESTÕES ---------------------------------

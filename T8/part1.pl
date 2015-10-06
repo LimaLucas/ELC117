@@ -13,10 +13,10 @@
  * elenco marcada para esse dia e horário. 
  * 
  * As seguintes condições devem ser obedecidas:
- *  - Sara é testada terça-feira, 9:00.
- * 	- Pilar deve ser testada em algum momento antes de Nanda.
- * 	- Olga deve ser testada no mesmo dia que Mel.
- * 	- Se Lia é testada às 8:00 em algum dia, então Rute é testada às 8:00 
+ *	- Sara é testada terça-feira, 9:00.
+ *	- Pilar deve ser testada em algum momento antes de Nanda.
+ *	- Olga deve ser testada no mesmo dia que Mel.
+ *	- Se Lia é testada às 8:00 em algum dia, então Rute é testada às 8:00 
  *    em outro dia.
  */
 

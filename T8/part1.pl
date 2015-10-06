@@ -32,27 +32,26 @@ disponivel(D,9) :- D = seg; D = ter; D = qua; D = qui; D = sex.
 
 antes(D1,H1,D2,H2) :- dia(D1,N1), dia(D2,N2), (N1<N2; (N1=N2, H1<H2)).
 
+
 /*possibilidades(P,0) :- P=[].
 possibilidades([(M,D,H)|T], N) :- 
 	(H==8; H==9), (D==seg; D==ter; D==qua; D==qui; D==sex),
 	(M==lia; M==mel; M==nanda; M==olga; M==pilar; M==rute; M==sara; M==tina),
 	N1 is N-1, possibilidades(T,N1).*/
 
-solucao(Testes, M) :- 
+solucao(Testes) :- 
 	Testes = [_, _, _, _, _, _, _, _],
 
     member(teste(sara, ter, 9), Testes),
 
     member(teste(pilar, DP, HP), Testes), 
     member(teste(nanda, DN, HN), Testes),
-    antes(DP,HP,DN,HN),
 
     member(teste(olga, DM, _), Testes),
     member(teste(mel, DM, _), Testes),
 
     member(teste(lia, DL, HL), Testes),
     member(teste(rute, DR, HR), Testes),
-    (HL=9; (DL\==DR, HL=:=HR)),
 
     member(teste(tina, DT, HT), Testes),
 
@@ -60,12 +59,12 @@ solucao(Testes, M) :-
     disponivel(DN,HN), disponivel(DP,HP),
     disponivel(DR,HR), disponivel(DT,HT),
 
-    member(teste(M, _, 8), Testes).
+    antes(DP,HP,DN,HN), 
+    (HL=9; (DL\==DR, HL=:=HR)).
 
 /*
 Consulta: 
-member((rute, seg, 8), solucao(T)), member((tina, ter, 8), solucao(T)), 
-member((pilar, qui, 8), solucao(T)), member((mel, sex, 8), solucao(T)).
+member((rute, seg, 8), solucao(T)), member((tina, ter, 8), solucao(T)), member((pilar, qui, 8), solucao(T)), member((mel, sex, 8), solucao(T)).
 */
 %% ------------------------------------------
 

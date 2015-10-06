@@ -27,11 +27,10 @@ dia(qua, 3).
 dia(qui, 4).
 dia(sex, 5).
 
-disponivel(D,8) :- D = seg; D = ter; D = qui; D = sex.
-disponivel(D,9) :- D = seg; D = ter; D = qua; D = qui; D = sex.
-
 antes(D1,H1,D2,H2) :- dia(D1,N1), dia(D2,N2), (N1<N2; (N1=N2, H1<H2)).
 
+/*disponivel(D,8) :- D = seg; D = ter; D = qui; D = sex.
+disponivel(D,9) :- D = seg; D = ter; D = qua; D = qui; D = sex.*/
 
 /*possibilidades(P,0) :- P=[].
 possibilidades([(M,D,H)|T], N) :- 
@@ -39,10 +38,20 @@ possibilidades([(M,D,H)|T], N) :-
 	(M==lia; M==mel; M==nanda; M==olga; M==pilar; M==rute; M==sara; M==tina),
 	N1 is N-1, possibilidades(T,N1).*/
 
-solucao(Testes) :- 
-	Testes = [_, _, _, _, _, _, _, _],
+/*verificaTestes([(M,D,H)|T]) :- 
+	member((M,D,H),T) \== true,	
+	verificaMenina(M,T), 
+	verificaTestes(T).
 
-    member(teste(sara, ter, 9), Testes),
+verificaMenina(M,[(M1,D,H)|T]) :-
+	M \== M1, verificaMenina(M,T).*/
+
+solucao(Testes) :- 
+	Testes = [_, _, _, _, _, _, _, _, _, _],
+	Testes = [(_,seg,8), (_,seg,9), (_,ter,8), (sara,ter,9),(nenhuma,qua,8),
+			  (_,qua,9), (_,qui,8), (_,qui,9), (_,sex,8), (_,sex,9)],
+
+    %% member(teste(sara, ter, 9), Testes),
 
     member(teste(pilar, DP, HP), Testes), 
     member(teste(nanda, DN, HN), Testes),
@@ -53,14 +62,14 @@ solucao(Testes) :-
     member(teste(lia, DL, HL), Testes),
     member(teste(rute, DR, HR), Testes),
 
-    member(teste(tina, DT, HT), Testes),
-
-    disponivel(DL,HL), disponivel(DM,_),
-    disponivel(DN,HN), disponivel(DP,HP),
-    disponivel(DR,HR), disponivel(DT,HT),
+    member(teste(tina, _, _), Testes),
 
     antes(DP,HP,DN,HN), 
     (HL=9; (DL\==DR, HL=:=HR)).
+
+    /*disponivel(DL,HL), disponivel(DM,_),
+    disponivel(DN,HN), disponivel(DP,HP),
+    disponivel(DR,HR), disponivel(DT,HT),*/
 
 /*
 Consulta: 

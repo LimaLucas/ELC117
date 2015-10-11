@@ -21,20 +21,6 @@
  */
 
 %% ------------------------------------------
-dia(seg, 1).
-dia(ter, 2).
-dia(qua, 3).
-dia(qui, 4).
-dia(sex, 5).
-
-/*disponivel(D,8) :- D = seg; D = ter; D = qui; D = sex.
-disponivel(D,9) :- D = seg; D = ter; D = qua; D = qui; D = sex.*/
-
-/*possibilidades(P,0) :- P=[].
-possibilidades([(M,D,H)|T], N) :- 
-	(H==8; H==9), (D==seg; D==ter; D==qua; D==qui; D==sex),
-	(M==lia; M==mel; M==nanda; M==olga; M==pilar; M==rute; M==sara; M==tina),
-	N1 is N-1, possibilidades(T,N1).*/
 
 /*verificaTestes([(M,D,H)|T]) :- 
 	member((M,D,H),T) \== true,	
@@ -44,6 +30,12 @@ possibilidades([(M,D,H)|T], N) :-
 verificaMenina(M,[(M1,D,H)|T]) :-
 	M \== M1, verificaMenina(M,T).*/
 
+dia(seg, 1).
+dia(ter, 2).
+dia(qua, 3).
+dia(qui, 4).
+dia(sex, 5).
+
 antes((_,D1,H1),(_,D2,H2)) :- dia(D1,N1), dia(D2,N2), (N1<N2; (N1=N2, H1<H2)).
 
 mesmoDia((_,D,_),(_,D,_)).
@@ -52,28 +44,29 @@ mesmaHora((_,D1,8),(_,D2,8)) :- D1 \== D2.
 mesmaHora((_,_,9),(_,_,_)).
 
 solucao(Testes) :- 
-	Testes = [_, _, _, _, _, _, _, _, _, _],
+	Testes = [_, _, _, _, _, _, _, _],
 
     member(teste(_,seg,8), Testes),
     member(teste(_,seg,9), Testes),
     member(teste(_,ter,8), Testes),
     member(teste(sara,ter,9), Testes),
-    member(teste(nenhuma,qua,8), Testes),
+    %% member(teste(nenhuma,qua,8), Testes),
     member(teste(_,qua,9), Testes),
     member(teste(_,qui,9), Testes),
     member(teste(_,sex,8), Testes),
     member(teste(_,sex,9), Testes),
 
-    antes(member(teste(pilar, _, _), Testes),
-          member(teste(nanda, _, _), Testes)),
-
-    mesmoDia(member(teste(olga, _, _), Testes),
-             member(teste(mel, _, _), Testes)),
-
-    mesmaHora(member(teste(lia, _, _), Testes),
-              member(teste(rute, _, _), Testes)),
-
-    member(teste(tina, _, _), Testes).
+    member(teste(pilar, _, _), Testes),
+    member(teste(nanda, _, _), Testes),
+    antes(teste(pilar, _, _),teste(nanda, _, _)),
+    member(teste(olga, _, _), Testes),
+    member(teste(mel, _, _), Testes),
+    mesmoDia(teste(olga, _, _),teste(mel, _, _)),
+    member(teste(tina, _, _), Testes),
+    member(teste(lia, _, _), Testes),
+    member(teste(rute, _, _), Testes),
+    mesmaHora(teste(lia, _, _),teste(rute, _, _)),
+    member(teste(rute, _, _), Testes).
 
 /*
 Consulta: 

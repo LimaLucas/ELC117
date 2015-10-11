@@ -27,8 +27,6 @@ dia(qua, 3).
 dia(qui, 4).
 dia(sex, 5).
 
-antes(D1,H1,D2,H2) :- dia(D1,N1), dia(D2,N2), (N1<N2; (N1=N2, H1<H2)).
-
 /*disponivel(D,8) :- D = seg; D = ter; D = qui; D = sex.
 disponivel(D,9) :- D = seg; D = ter; D = qua; D = qui; D = sex.*/
 
@@ -46,30 +44,36 @@ possibilidades([(M,D,H)|T], N) :-
 verificaMenina(M,[(M1,D,H)|T]) :-
 	M \== M1, verificaMenina(M,T).*/
 
+antes((_,D1,H1),(_,D2,H2)) :- dia(D1,N1), dia(D2,N2), (N1<N2; (N1=N2, H1<H2)).
+
+mesmoDia((_,D,_),(_,D,_)).
+
+mesmaHora((_,D1,8),(_,D2,8)) :- D1 \== D2.
+mesmaHora((_,_,9),(_,_,_)).
+
 solucao(Testes) :- 
 	Testes = [_, _, _, _, _, _, _, _, _, _],
-	Testes = [(_,seg,8), (_,seg,9), (_,ter,8), (sara,ter,9),(nenhuma,qua,8),
-			  (_,qua,9), (_,qui,8), (_,qui,9), (_,sex,8), (_,sex,9)],
 
-    %% member(teste(sara, ter, 9), Testes),
+    member(teste(_,seg,8), Testes),
+    member(teste(_,seg,9), Testes),
+    member(teste(_,ter,8), Testes),
+    member(teste(sara,ter,9), Testes),
+    member(teste(nenhuma,qua,8), Testes),
+    member(teste(_,qua,9), Testes),
+    member(teste(_,qui,9), Testes),
+    member(teste(_,sex,8), Testes),
+    member(teste(_,sex,9), Testes),
 
-    member(teste(pilar, DP, HP), Testes), 
-    member(teste(nanda, DN, HN), Testes),
+    antes(member(teste(pilar, _, _), Testes),
+          member(teste(nanda, _, _), Testes)),
 
-    member(teste(olga, DM, _), Testes),
-    member(teste(mel, DM, _), Testes),
+    mesmoDia(member(teste(olga, _, _), Testes),
+             member(teste(mel, _, _), Testes)),
 
-    member(teste(lia, DL, HL), Testes),
-    member(teste(rute, DR, HR), Testes),
+    mesmaHora(member(teste(lia, _, _), Testes),
+              member(teste(rute, _, _), Testes)),
 
-    member(teste(tina, _, _), Testes),
-
-    antes(DP,HP,DN,HN), 
-    (HL=9; (DL\==DR, HL=:=HR)).
-
-    /*disponivel(DL,HL), disponivel(DM,_),
-    disponivel(DN,HN), disponivel(DP,HP),
-    disponivel(DR,HR), disponivel(DT,HT),*/
+    member(teste(tina, _, _), Testes).
 
 /*
 Consulta: 

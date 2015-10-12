@@ -37,14 +37,18 @@ solucao(Sanduiches) :-
 	B = (presunto, _),
 	(C = (queijo, _); C = (_, queijo)),
 	(A = (tomate, _); C = (tomate, _)),
+	
 	(A = (ovo,_); A = (_,ovo); B = (presunto, ovo);
 	C = (queijo,ovo); C = (ovo, queijo)),
 
 	soB1Presunto(A,B,C),
 	partesDiferentes(A,B,C).
 
-
 /* Consultas:
+ * Questão 1:
+ * ?- solucao([(A),(B),(tomate,C2)]).
+ * Observa-se que em todas as opções de resposta, C2 necessariamente deve ser queijo.
+ *
  * Questão 3:
  * ?- solucao([(ovo,_),(_,ovo),(_)]).
  * ?- solucao([(ovo,_),(_),(_,ovo)]).
@@ -54,10 +58,11 @@ solucao(Sanduiches) :-
  *
  * Questão 4:
  * ?- solucao([(A1,A2),(_),(C1,C2)]), A1 \== tomate, A2 \== tomate, C1 \== tomate, C2 \== tomate.
- * ?- solucao([(_,A2),(_,B2),(_,C2)]), (A2 \== queijo, B2 \== queijo, C2 \== queijo), (A2 == ovo, B2 \== ovo, C2 \== ovo); (A2 \== ovo, B2 == ovo, C2 \== ovo); (A2 \== ovo, B2 \== ovo, C2 == ovo).
+ * ?- solucao([(A1,A2),(B1,B2),(C1,C2)]), (A2 \== queijo, B2 \== queijo, C2 \== queijo), (((A1 = ovo, C1 \== ovo),(A2 \== ovo; B2 = ovo; C2 = ovo));((A1 \== ovo, C1 = ovo), (A2 = ovo; B2 = ovo; C2 \== ovo))).
  * ?- solucao([(_,C),(C,_),(_)]).
  * ?- solucao([(A1,_),(B1,_),(C1,_)]), A1 \== queijo, B1 \== queijo, C1 \== queijo.
  * ?- solucao([(A,_),(_),(C,_)]), (A == queijo; A == ovo),(C == queijo; C == ovo).
+ * 
  */
 
 %% ------------------------------------------

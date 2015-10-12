@@ -50,8 +50,9 @@ solucao(Testes) :-
     member(teste(_,seg,9), Testes),
     member(teste(_,ter,8), Testes),
     member(teste(sara,ter,9), Testes),
-    %% member(teste(nenhuma,qua,8), Testes),
+    member(teste(nenhuma,qua,8), Testes),
     member(teste(_,qua,9), Testes),
+    member(teste(_,qui,8), Testes),
     member(teste(_,qui,9), Testes),
     member(teste(_,sex,8), Testes),
     member(teste(_,sex,9), Testes),
@@ -66,10 +67,11 @@ solucao(Testes) :-
     member(teste(lia, _, _), Testes),
     member(teste(rute, _, _), Testes),
     mesmaHora(teste(lia, _, _),teste(rute, _, _)),
-    member(teste(rute, _, _), Testes).
+    member(teste(rute, _, _), Testes),
+    member(teste(nenhuma2, _, _), Testes).
 
 /*
-Consulta: 
+Consulta teste para questão 19: 
 member((rute, seg, 8), solucao(T)), member((tina, ter, 8), solucao(T)), member((pilar, qui, 8), solucao(T)), member((mel, sex, 8), solucao(T)).
 */
 %% ------------------------------------------
@@ -96,7 +98,7 @@ member((rute, seg, 8), solucao(T)), member((tina, ter, 8), solucao(T)), member((
  *
  * QUESTÃO 23. Se  nenhuma  menina  é  testada  na quinta-feira, 8:00,
  * qual das seguintes alternativas poderia ser verdadeira?
- * R = D. (Lia é testada terça-feira, 8:00 e Olga é tes tada em algum 
+ * R = D. (Lia é testada terça-feira, 8:00 e Olga é testada em algum 
  *         momento antes de Rute.)
  * 
  * QUESTÃO 24. Se  Rute  é  testada  na  quinta-feira, 8:00 e Tina é 

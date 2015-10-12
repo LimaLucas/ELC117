@@ -24,30 +24,63 @@
 
 %% ------------------------------------------
 
+partesDiferentes((C1,B1),(C2,B2),(C3,B3)) :- 
+	C1 \== C2, C2 \== C3, C1 \== C3, %% Todas as camadas de cima são diferentes
+	B1 \== B2, B2 \== B3, B1 \== B3, %% Todas as camadas de baixo são diferentes
+	C1 \== B1, C2 \== B2, C3 \== B3. %% Cada sanduíche tem camadas diferentes
+
+soB1Presunto((C1,B1),(C2,B2),(C3,B3)) :- C2 == presunto,
+	C1 \== C2, B1 \== C2, B2 \== C2, C3 \== C2, B3 \== C2.
+
+solucao(Sanduiches) :-
+	Sanduiches = [A, B, C],
+	B = (presunto, _),
+	(C = (queijo, _); C = (_, queijo)),
+	(A = (tomate, _); C = (tomate, _)),
+	(A = (ovo,_); A = (_,ovo); B = (presunto, ovo);
+	C = (queijo,ovo); C = (ovo, queijo)),
+
+	soB1Presunto(A,B,C),
+	partesDiferentes(A,B,C).
 
 
+/* Consultas:
+ * Questão 3:
+ * ?- solucao([(ovo,_),(_,ovo),(_)]).
+ * ?- solucao([(ovo,_),(_),(_,ovo)]).
+ * ?- solucao([(_,tomate),(_),(ovo,_)]).
+ * ?- solucao([(queijo,_),(_),(_,tomate)]).
+ * ?- solucao([(queijo,_),(_,queijo),(_)]).
+ *
+ * Questão 4:
+ * ?- solucao([(A1,A2),(_),(C1,C2)]), A1 \== tomate, A2 \== tomate, C1 \== tomate, C2 \== tomate.
+ * ?- solucao([(_,A2),(_,B2),(_,C2)]), (A2 \== queijo, B2 \== queijo, C2 \== queijo), (A2 == ovo, B2 \== ovo, C2 \== ovo); (A2 \== ovo, B2 == ovo, C2 \== ovo); (A2 \== ovo, B2 \== ovo, C2 == ovo).
+ * ?- solucao([(_,C),(C,_),(_)]).
+ * ?- solucao([(A1,_),(B1,_),(C1,_)]), A1 \== queijo, B1 \== queijo, C1 \== queijo.
+ * ?- solucao([(A,_),(_),(C,_)]), (A == queijo; A == ovo),(C == queijo; C == ovo).
+ */
 
 %% ------------------------------------------
 
 /* QUESTÕES ---------------------------------
  *
- * QUESTÃO. Se a camada de cima do sanduíche C é de tomate, então qual 
+ * QUESTÃO 1. Se a camada de cima do sanduíche C é de tomate, então qual 
  * das seguintes afirmaçÂões é necessariamente verdadeira?
  * R = A camada de baixo do sanduíche C é de queijo.
  *
- * QUESTÃO. Suponha que nenhuma das camadas é de presunto (nem a do 
+ * QUESTÃO 2. Suponha que nenhuma das camadas é de presunto (nem a do 
  * sanduíche B). Se todas as outras condiçÂões permanecerem válidas, 
  * então qual das seguintes afirmaçÂões poderia ser verdadeira?
  * R = O sanduíche B não tem camada de queijo.
  *
- * QUESTÃO. Qual das seguintes afirmaçÂões poderia ser verdadeira?
+ * QUESTÃO 3. Qual das seguintes afirmaçÂões poderia ser verdadeira?
  * R = Tanto a camada de cima do sanduíche A como a camada de 
  * baixo do sanduíche B são de ovo.
  *
- * QUESTÃO. Qual das seguintes afirmaçÂões poderia ser verdadeira?
+ * QUESTÃO 4. Qual das seguintes afirmaçÂões poderia ser verdadeira?
  * R = Nenhuma camada de cima dos sanduíches é de queijo.
  * 
- * QUESTÃO. Se a camada de baixo do sanduíche C é de ovo, então cada 
+ * QUESTÃO 5. Se a camada de baixo do sanduíche C é de ovo, então cada 
  * uma das afirmaçÂões abaixo deve ser verdadeira EXCETO:
  * R = Duas das seis camadas são de ovo.
  *

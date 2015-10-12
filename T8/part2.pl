@@ -58,7 +58,9 @@ solucao(Sanduiches) :-
  *
  * Questão 4:
  * ?- solucao([(A1,A2),(_),(C1,C2)]), A1 \== tomate, A2 \== tomate, C1 \== tomate, C2 \== tomate.
- * ?- solucao([(A1,A2),(B1,B2),(C1,C2)]), (A2 \== queijo, B2 \== queijo, C2 \== queijo), (((A1 = ovo, C1 \== ovo),(A2 \== ovo; B2 = ovo; C2 = ovo));((A1 \== ovo, C1 = ovo), (A2 = ovo; B2 = ovo; C2 \== ovo))).
+ * ?- solucao([(A1,A2),(B1,B2),(C1,C2)]), (A2 \== queijo, B2 \== queijo, C2 \== queijo), 
+ * (((A1 = ovo, C1 \== ovo),(A2 \== ovo; B2 = ovo; C2 = ovo));
+ * ((A1 \== ovo, C1 = ovo), (A2 = ovo; B2 = ovo; C2 \== ovo))).
  * ?- solucao([(_,C),(C,_),(_)]).
  * ?- solucao([(A1,_),(B1,_),(C1,_)]), A1 \== queijo, B1 \== queijo, C1 \== queijo.
  * ?- solucao([(A,_),(_),(C,_)]), (A == queijo; A == ovo),(C == queijo; C == ovo).

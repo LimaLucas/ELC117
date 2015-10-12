@@ -20,9 +20,8 @@
  * 	- no sanduíche C, uma das camadas é de queijo;
  * 	- a camada de cima do sanduíche B é de presunto. 
  *
+ * -----------------------------------------
  */
-
-%% ------------------------------------------
 
 partesDiferentes((C1,B1),(C2,B2),(C3,B3)) :- 
 	C1 \== C2, C2 \== C3, C1 \== C3, %% Todas as camadas de cima são diferentes
@@ -44,10 +43,11 @@ solucao(Sanduiches) :-
 	soB1Presunto(A,B,C),
 	partesDiferentes(A,B,C).
 
-/* Consultas:
+/* CONSULTAS: ------------------------------
+ *
  * Questão 1:
  * ?- solucao([(A),(B),(tomate,C2)]).
- * Observa-se que em todas as opções de resposta, C2 necessariamente deve ser queijo.
+ * # Observa-se que em todas as opções de resposta, C2 necessariamente deve ser queijo.
  *
  * Questão 3:
  * ?- solucao([(ovo,_),(_,ovo),(_)]).
@@ -63,11 +63,13 @@ solucao(Sanduiches) :-
  * ?- solucao([(A1,_),(B1,_),(C1,_)]), A1 \== queijo, B1 \== queijo, C1 \== queijo.
  * ?- solucao([(A,_),(_),(C,_)]), (A == queijo; A == ovo),(C == queijo; C == ovo).
  * 
- */
-
-%% ------------------------------------------
-
-/* QUESTÕES ---------------------------------
+ * Questão 5:
+ * ?- solucao([(A1,A2),(B1,B2),(C1,ovo)]), A2 \== ovo, B2 \== ovo.
+ * # Observa-se que pode haver ovo apenas em outra camada de cima
+ * e a única saída resultante não apresenta isso, portanto, não pode
+ * haver 2 camadas de ovo.
+ *
+ * QUESTÕES --------------------------------
  *
  * QUESTÃO 1. Se a camada de cima do sanduíche C é de tomate, então qual 
  * das seguintes afirmaçÂões é necessariamente verdadeira?

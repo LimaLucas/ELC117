@@ -4,8 +4,8 @@
  */
 
 class Ponto {
-	private double x; // Coordenada x de um ponto
-	private double y; // Coordenada y de um ponto
+	private double x; // Coordenada x do ponto
+	private double y; // Coordenada y do ponto
 
 	public Ponto() {
 		this.x = 0;
@@ -17,20 +17,24 @@ class Ponto {
 		this.y = dy;
 	}
 
-	public double getX(){
+	// Retorna a coordenada X do ponto
+	public double getX(){ 
 		return this.x;
 	}
 
-	public double getY(){
+	// Retorna a coordenada Y do ponto
+	public double getY(){ 
 		return this.y;
 	}
 
-	public void desloca(double dx, double dy) {
+	// Desloca o ponto conforme parâmetros
+	public void desloca(double dx, double dy) { 
 		this.x = this.x + dx;
 		this.y = this.y + dy;
 	}
 
-	public double distancia(Ponto p) {
+	// Calcula a distância entre um ponto e outro
+	public double distancia(Ponto p) { 
 		double dx = p.getX() - this.x;
 		double dy = p.getY() - this.y;
 

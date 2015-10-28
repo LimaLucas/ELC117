@@ -43,6 +43,12 @@ class Circle {
 	public double getDiameter() {
 		return this.ray*2;
 	}
+
+	// Retorna a distancia entre o centro de dois circulos
+	public double getDistance(Circle c) {
+		return this.center.getDistance(c.getCenter());
+	}
+
 }
 
 class CircleTest {
@@ -59,6 +65,6 @@ class CircleTest {
 			"\n  - Diametro: " + c2.getDiameter());
 
 		System.out.println("\nDistancia entre o centro dos circulos: " + 
-			c1.getCenter().getDistance(c2.getCenter()));
+			c1.getDistance(c2) + "\n");
 	}
 }

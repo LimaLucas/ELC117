@@ -7,10 +7,10 @@ import Part2.Veiculo;
  */
 
 class Estacionamento {
-	private carro;	// Valor por hora para carros
-	private moto;	// Valor por hora para motos
-	private static final valorCarro = 3;
-	private static final valorMoto = 1.5;
+	private double carro;	// Valor por hora para carros
+	private double moto;	// Valor por hora para motos
+	private static final double valorCarro = 3;
+	private static final double valorMoto = 1.5;
 	
 	public Estacionamento() {
 		this.carro = valorCarro;
@@ -18,11 +18,15 @@ class Estacionamento {
 	}
 
 	public double calcValor(Veiculo auto) {
+		//System.out.println(auto.getSaida() + " - " + auto.getEntrada() + " = " + auto.getTempo());
 		if(auto.getTipo() == 1)
 			return auto.getTempo()*this.carro;
 		
-		else if(auto.getTipo() == 2){
+		else if(auto.getTipo() == 2)
 			return auto.getTempo()*this.moto;
+
+		else
+			return 0;
 	}
 
 }

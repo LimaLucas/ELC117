@@ -5,7 +5,7 @@ Sistemas de Informação da Universidade Federal de Santa Maria (UFSM).
 
 <b>Linguagens utilizadas por trabalhos:</b>
 
-- C: T1
-- Haskell: T3, T4, T5, T6
-- Prolog: T7, T8
-- Java: T9
+- C: T01
+- Haskell: T03, T04, T05, T06
+- Prolog: T07, T08
+- Java: T09, T10

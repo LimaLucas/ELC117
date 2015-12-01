@@ -34,3 +34,4 @@
 *.gitignore~
 
 /T10/PostosDeCombustivel/nbproject/private/
+/T10/PostosDeCombustivel/build/

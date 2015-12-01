@@ -33,3 +33,4 @@
 *.txt~
 *.gitignore~
 
+/T10/PostosDeCombustivel/nbproject/private/

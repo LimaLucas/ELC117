@@ -92,6 +92,4 @@ public class Posto {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
-    
-    
 }

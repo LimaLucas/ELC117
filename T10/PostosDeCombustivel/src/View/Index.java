@@ -39,6 +39,7 @@ public class Index extends javax.swing.JFrame {
         jMenuExcluir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Postos de combustível de Santa Maria");
         setPreferredSize(new java.awt.Dimension(940, 520));
 
         jLabel1.setText("Filtrar postos por bairro:");

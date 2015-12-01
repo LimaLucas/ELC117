@@ -44,3 +44,14 @@ Para quem quiser aprender e praticar mais, e ainda conseguir algum bônus em not
 
   - Para manipulação de arquivos, recomenda-se fazer testes de leitura/escrita separadamente, antes de integrar essa parte ao restante do código. Faça commit/push dos testes também! 
 
+## Material de Apoio:
+
+  - [Site da ANP - Agência Nacional do Petróleo, Gás Natural e Biocombustíveis](http://www.anp.gov.br/). Neste site, você pode obter dados sobre postos e preços de combustíveis para alimentar seu aplicativo.
+  - [Parse CSV File using StringTokenizer](http://www.java-examples.com/parse-csv-file-using-stringtokenizer-example)
+Exemplo simples de leitura de arquivo em formato CSV. Há outras formas de fazer isso, algumas com bibliotecas externas, mas esse exemplo simples é uma dica para começar sem gastar muito tempo.
+  - [Formato JSON](http://json.org/). Informações sobre esse formato e código/bibliotecas em várias linguagens.
+  - Bancos de dados em Java (JDBC e DAO):
+    - Slides: [JDBC](http://www-usr.inf.ufsm.br/~andrea/elc117/slides/slides-java-jdbc-2015b.pdf) (Java DataBase Connectivity) e [DAO](http://www-usr.inf.ufsm.br/~andrea/elc117/slides/slides-java-dao-2015b.pdf) (Data Access Object).
+    - Práticas: [Acessando BD em Java](http://www-usr.inf.ufsm.br/~andrea/elc117-2011a/exercs/ex_java_jdbc.html) | [GUI e JDBC](http://www-usr.inf.ufsm.br/~andrea/elc117-2011a/exercs/ex_java_gui_jdbc.html) (roteiros de aulas de outro semestre).
+    - Código-fonte, em ordem de complexidade: [ExemploJDBC.java](http://www-usr.inf.ufsm.br/~andrea/elc117/src/java/ExemploJDBC.java), [ExemploJdbcJTable.zip](http://www-usr.inf.ufsm.br/~andrea/elc117/src/java/ExemploJdbcJTable.zip), [ExemploJdbcDAO.zip](http://www-usr.inf.ufsm.br/~andrea/elc117/src/java/ExemploJdbcDAO.zip), [ExemploJdbcGenericDAO.zip](http://www-usr.inf.ufsm.br/~andrea/elc117/src/java/ExemploJdbcGenericDAO.zip).
+

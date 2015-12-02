@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
 /**
@@ -175,6 +170,11 @@ public class PostoView extends javax.swing.JFrame {
         });
 
         jBtnLimpar.setText("Limpar");
+        jBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnLimparActionPerformed(evt);
+            }
+        });
 
         jPnlImagem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPnlImagem.setPreferredSize(new java.awt.Dimension(6, 200));
@@ -218,6 +218,11 @@ public class PostoView extends javax.swing.JFrame {
 
         jBtnSalvar.setText("Salvar");
         jBtnSalvar.setPreferredSize(new java.awt.Dimension(120, 30));
+        jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSalvarActionPerformed(evt);
+            }
+        });
 
         jBtnCancelar.setText("Cancelar");
         jBtnCancelar.setPreferredSize(new java.awt.Dimension(118, 30));
@@ -275,6 +280,14 @@ public class PostoView extends javax.swing.JFrame {
     private void jBtnCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCarregarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnCarregarActionPerformed
+
+    private void jBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLimparActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnLimparActionPerformed
+
+    private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnSalvarActionPerformed
 
     /**
      * @param args the command line arguments

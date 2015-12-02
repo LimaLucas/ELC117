@@ -15,10 +15,8 @@ import View.*;
 public class Teste {
     public static void main(String[] args) {
         
-        
-        
         try{
-            String strFile = "C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/dados_postos.csv";
+            String strFile = "C:\\Users\\LucasLima\\Documents\\Git\\ELC117_Paradigmas-Prog\\T10\\dados_postos.csv";
             
             BufferedReader br = new BufferedReader( new FileReader(strFile));
             String strLine = "";
@@ -33,6 +31,8 @@ public class Teste {
                     columnNumber++;
                     System.out.println("Line # " + lineNumber + ", Token # " + columnNumber + ", Token : "+ st.nextToken());
                 }
+                
+                
                 
                 columnNumber = 0;
             }

@@ -41,31 +41,101 @@ public class Index extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Postos de combustível de Santa Maria");
         setPreferredSize(new java.awt.Dimension(940, 520));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setText("Filtrar postos por bairro:");
 
         jBtnFiltrar.setText("Filtrar");
         jBtnFiltrar.setPreferredSize(new java.awt.Dimension(67, 30));
+        jBtnFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnFiltrarActionPerformed(evt);
+            }
+        });
 
         jMenuImport.setText("Importar CSV");
+        jMenuImport.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuImport.setName("menuImport"); // NOI18N
+        jMenuImport.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenuImportMenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenuImport);
         jMenuImport.getAccessibleContext().setAccessibleName("Importar CSV");
 
         jMenuCadastrar.setText("Cadastrar Posto");
+        jMenuCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuCadastrar.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenuCadastrarMenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenuCadastrar);
         jMenuCadastrar.getAccessibleContext().setAccessibleName("Cadastrar Posto");
 
         jMenuEditar.setText("Editar Posto");
+        jMenuEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuEditar.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenuEditarMenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenuEditar);
 
         jMenuVisualizar.setText("Visualizar Posto");
+        jMenuVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuVisualizar.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenuVisualizarMenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenuVisualizar);
 
         jMenuHistorico.setText("Histório de Combustíveis");
+        jMenuHistorico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuHistorico.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenuHistoricoMenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenuHistorico);
 
         jMenuExcluir.setText("Excluir Posto");
+        jMenuExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuExcluir.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenuExcluirMenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenuExcluir);
 
         setJMenuBar(jMenuBar1);
@@ -96,6 +166,41 @@ public class Index extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBtnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnFiltrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnFiltrarActionPerformed
+
+    private void jMenuImportMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuImportMenuSelected
+        // TODO add your handling code here:
+        
+        jMenuImport.setEnabled(false);
+    }//GEN-LAST:event_jMenuImportMenuSelected
+
+    private void jMenuCadastrarMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuCadastrarMenuSelected
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuCadastrarMenuSelected
+
+    private void jMenuEditarMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuEditarMenuSelected
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuEditarMenuSelected
+
+    private void jMenuVisualizarMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuVisualizarMenuSelected
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuVisualizarMenuSelected
+
+    private void jMenuHistoricoMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuHistoricoMenuSelected
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuHistoricoMenuSelected
+
+    private void jMenuExcluirMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuExcluirMenuSelected
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuExcluirMenuSelected
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        // Apagar todos os dados do arquivo CSV e salvar todos os dados do array list no lugar
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments

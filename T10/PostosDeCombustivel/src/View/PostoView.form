@@ -346,6 +346,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Limpar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnLimparActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPnlImagem">
           <Properties>
@@ -381,6 +384,9 @@
           <Dimension value="[120, 30]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnSalvarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBtnCancelar">
       <Properties>

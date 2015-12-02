@@ -12,9 +12,24 @@
             </Property>
             <Property name="name" type="java.lang.String" value="menuImport" noResource="true"/>
           </Properties>
-          <Events>
-            <EventHandler event="menuSelected" listener="javax.swing.event.MenuListener" parameters="javax.swing.event.MenuEvent" handler="jMenuImportMenuSelected"/>
-          </Events>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuArqPosto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Arquivo de Postos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuArqPostoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuArqCombus">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Arquivo de Combust&#xed;veis"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuArqCombusActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenuCadastrar">
           <Properties>

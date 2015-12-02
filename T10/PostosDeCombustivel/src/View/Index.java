@@ -29,6 +29,8 @@ public class Index extends javax.swing.JFrame {
         jTablePostos = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuImport = new javax.swing.JMenu();
+        jMenuArqPosto = new javax.swing.JMenuItem();
+        jMenuArqCombus = new javax.swing.JMenuItem();
         jMenuCadastrar = new javax.swing.JMenu();
         jMenuEditar = new javax.swing.JMenu();
         jMenuVisualizar = new javax.swing.JMenu();
@@ -62,15 +64,23 @@ public class Index extends javax.swing.JFrame {
         jMenuImport.setText("Importar CSV");
         jMenuImport.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuImport.setName("menuImport"); // NOI18N
-        jMenuImport.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenuImportMenuSelected(evt);
+
+        jMenuArqPosto.setText("Arquivo de Postos");
+        jMenuArqPosto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuArqPostoActionPerformed(evt);
             }
         });
+        jMenuImport.add(jMenuArqPosto);
+
+        jMenuArqCombus.setText("Arquivo de Combustíveis");
+        jMenuArqCombus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuArqCombusActionPerformed(evt);
+            }
+        });
+        jMenuImport.add(jMenuArqCombus);
+
         jMenuBar1.add(jMenuImport);
 
         jMenuCadastrar.setText("Cadastrar Posto");
@@ -176,12 +186,6 @@ public class Index extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnFiltrarActionPerformed
 
-    private void jMenuImportMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuImportMenuSelected
-        // TODO add your handling code here:
-        
-        jMenuImport.setEnabled(false);
-    }//GEN-LAST:event_jMenuImportMenuSelected
-
     private void jMenuCadastrarMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuCadastrarMenuSelected
         new PostoView().setVisible(true);
     }//GEN-LAST:event_jMenuCadastrarMenuSelected
@@ -206,6 +210,16 @@ public class Index extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Apagar todos os dados do arquivo CSV e salvar todos os dados do array list no lugar
     }//GEN-LAST:event_formWindowClosed
+
+    private void jMenuArqPostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuArqPostoActionPerformed
+        // TODO add your handling code here:
+        //jMenuArqPosto.setEnabled(false);
+    }//GEN-LAST:event_jMenuArqPostoActionPerformed
+
+    private void jMenuArqCombusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuArqCombusActionPerformed
+        // TODO add your handling code here:
+        //jMenuArqCombus.setEnabled(false);
+    }//GEN-LAST:event_jMenuArqCombusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,6 +259,8 @@ public class Index extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnFiltrar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuArqCombus;
+    private javax.swing.JMenuItem jMenuArqPosto;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastrar;
     private javax.swing.JMenu jMenuEditar;

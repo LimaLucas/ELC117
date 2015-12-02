@@ -44,10 +44,10 @@ public class PostoView extends javax.swing.JFrame {
         setTitle("Cadastro de Postos");
         setAlwaysOnTop(true);
         setLocation(new java.awt.Point(300, 150));
-        setMaximizedBounds(new java.awt.Rectangle(300, 150, 830, 375));
+        setMaximizedBounds(new java.awt.Rectangle(300, 150, 870, 375));
         setMaximumSize(new java.awt.Dimension(1000, 375));
-        setMinimumSize(new java.awt.Dimension(830, 375));
-        setPreferredSize(new java.awt.Dimension(830, 375));
+        setMinimumSize(new java.awt.Dimension(870, 375));
+        setPreferredSize(new java.awt.Dimension(870, 375));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);

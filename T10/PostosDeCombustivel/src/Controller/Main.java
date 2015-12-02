@@ -12,7 +12,7 @@ import View.*;
  *
  * @author LucasLima
  */
-public class Teste {
+public class Main {
     public static void main(String[] args) {
         
         TablePosto tableModel = new TablePosto();

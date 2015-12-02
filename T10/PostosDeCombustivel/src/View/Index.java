@@ -72,7 +72,6 @@ public class Index extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(jMenuImport);
-        jMenuImport.getAccessibleContext().setAccessibleName("Importar CSV");
 
         jMenuCadastrar.setText("Cadastrar Posto");
         jMenuCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -86,7 +85,6 @@ public class Index extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(jMenuCadastrar);
-        jMenuCadastrar.getAccessibleContext().setAccessibleName("Cadastrar Posto");
 
         jMenuEditar.setText("Editar Posto");
         jMenuEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

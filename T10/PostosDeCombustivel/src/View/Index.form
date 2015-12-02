@@ -12,9 +12,6 @@
             </Property>
             <Property name="name" type="java.lang.String" value="menuImport" noResource="true"/>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Importar CSV"/>
-          </AccessibilityProperties>
           <Events>
             <EventHandler event="menuSelected" listener="javax.swing.event.MenuListener" parameters="javax.swing.event.MenuEvent" handler="jMenuImportMenuSelected"/>
           </Events>
@@ -26,9 +23,6 @@
               <Color id="Cursor em Forma de M&#xe3;o"/>
             </Property>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Cadastrar Posto"/>
-          </AccessibilityProperties>
           <Events>
             <EventHandler event="menuSelected" listener="javax.swing.event.MenuListener" parameters="javax.swing.event.MenuEvent" handler="jMenuCadastrarMenuSelected"/>
           </Events>

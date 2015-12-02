@@ -1,4 +1,4 @@
-package Controler;
+package Controller;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,6 +14,8 @@ import View.*;
  */
 public class Teste {
     public static void main(String[] args) {
+        
+        TablePosto tableModel = new TablePosto();
         
         try{
             String strFile = "C:\\Users\\LucasLima\\Documents\\Git\\ELC117_Paradigmas-Prog\\T10\\dados_postos.csv";

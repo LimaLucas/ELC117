@@ -51,11 +51,6 @@ public class Index extends javax.swing.JFrame {
 
         jBtnFiltrar.setText("Filtrar");
         jBtnFiltrar.setPreferredSize(new java.awt.Dimension(67, 30));
-        jBtnFiltrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnFiltrarActionPerformed(evt);
-            }
-        });
 
         jTablePostos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTablePostos.setModel(tablePostos);
@@ -85,77 +80,32 @@ public class Index extends javax.swing.JFrame {
 
         jMenuCadastrar.setText("Cadastrar Posto");
         jMenuCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuCadastrar.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenuCadastrarMenuSelected(evt);
-            }
-        });
         jMenuCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenuCadastrarMouseClicked(evt);
-            }
-        });
-        jMenuCadastrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jMenuCadastrarKeyPressed(evt);
             }
         });
         jMenuBar1.add(jMenuCadastrar);
 
         jMenuEditar.setText("Editar Posto");
         jMenuEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuEditar.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenuEditarMenuSelected(evt);
-            }
-        });
         jMenuBar1.add(jMenuEditar);
 
         jMenuVisualizar.setText("Visualizar Posto");
         jMenuVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuVisualizar.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenuVisualizarMenuSelected(evt);
-            }
-        });
         jMenuBar1.add(jMenuVisualizar);
 
         jMenuHistorico.setText("Histório de Combustíveis");
         jMenuHistorico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuHistorico.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenuHistoricoMenuSelected(evt);
+        jMenuHistorico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuHistoricoMouseClicked(evt);
             }
         });
         jMenuBar1.add(jMenuHistorico);
 
         jMenuExcluir.setText("Excluir Posto");
         jMenuExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuExcluir.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenuExcluirMenuSelected(evt);
-            }
-        });
         jMenuBar1.add(jMenuExcluir);
 
         setJMenuBar(jMenuBar1);
@@ -192,30 +142,6 @@ public class Index extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBtnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnFiltrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnFiltrarActionPerformed
-
-    private void jMenuCadastrarMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuCadastrarMenuSelected
-        
-    }//GEN-LAST:event_jMenuCadastrarMenuSelected
-
-    private void jMenuEditarMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuEditarMenuSelected
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuEditarMenuSelected
-
-    private void jMenuVisualizarMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuVisualizarMenuSelected
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuVisualizarMenuSelected
-
-    private void jMenuHistoricoMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuHistoricoMenuSelected
-        new HistoricoView().setVisible(true);
-    }//GEN-LAST:event_jMenuHistoricoMenuSelected
-
-    private void jMenuExcluirMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuExcluirMenuSelected
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuExcluirMenuSelected
-
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
         // Apagar todos os dados do arquivo CSV e salvar todos os dados do array list no lugar
@@ -235,9 +161,9 @@ public class Index extends javax.swing.JFrame {
         new PostoView().setVisible(true);
     }//GEN-LAST:event_jMenuCadastrarMouseClicked
 
-    private void jMenuCadastrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMenuCadastrarKeyPressed
-        new PostoView().setVisible(true);
-    }//GEN-LAST:event_jMenuCadastrarKeyPressed
+    private void jMenuHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHistoricoMouseClicked
+        new HistoricoView().setVisible(true);
+    }//GEN-LAST:event_jMenuHistoricoMouseClicked
 
     /**
      * @param args the command line arguments

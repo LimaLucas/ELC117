@@ -10,15 +10,17 @@ public class Combustivel {
     private Date dataColeta;
     private float precoCusto;
     private float precoVenda;
+    private boolean vigente;
     private int idPosto;
     
     public Combustivel(){}
 
-    public Combustivel(String tipo, Date dataColeta, float precoCusto, float precoVenda, int idPosto) {
+    public Combustivel(String tipo, Date dataColeta, float precoCusto, float precoVenda, boolean vigente, int idPosto) {
         this.tipo = tipo;
         this.dataColeta = dataColeta;
         this.precoCusto = precoCusto;
         this.precoVenda = precoVenda;
+        this.vigente = vigente;
         this.idPosto = idPosto;
     }
     
@@ -56,6 +58,14 @@ public class Combustivel {
         this.precoVenda = precoVenda;
     }
 
+    public boolean isVigente() {
+        return vigente;
+    }
+
+    public void setVigente(boolean vigente) {
+        this.vigente = vigente;
+    }
+
     public int getIdPosto() {
         return idPosto;
     }
@@ -63,4 +73,6 @@ public class Combustivel {
     public void setIdPosto(int idPosto) {
         this.idPosto = idPosto;
     }
+
+    
 }

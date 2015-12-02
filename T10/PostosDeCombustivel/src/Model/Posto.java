@@ -12,11 +12,12 @@ public class Posto {
     private String bandeira;
     private String endereco;
     private String bairro;
+    private String cep;
     private String imagem;
     
     public Posto(){}
-    
-    public Posto(int id, String cnpj, String razaoSocial, String nomeFantasia, String bandeira, String endereco, String bairro, String imagem){
+
+    public Posto(int id, String cnpj, String razaoSocial, String nomeFantasia, String bandeira, String endereco, String bairro, String cep, String imagem) {
         this.id = id;
         this.cnpj = cnpj;
         this.razaoSocial = razaoSocial;
@@ -24,8 +25,22 @@ public class Posto {
         this.bandeira = bandeira;
         this.endereco = endereco;
         this.bairro = bairro;
+        this.cep = cep;
         this.imagem = imagem;
     }
+
+    public Posto(int id, String cnpj, String razaoSocial, String nomeFantasia, String bandeira, String endereco, String bairro, String cep) {
+        this.id = id;
+        this.cnpj = cnpj;
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
+        this.bandeira = bandeira;
+        this.endereco = endereco;
+        this.bairro = bairro;
+        this.cep = cep;
+        this.imagem = "";
+    }
+    
     
     // Métodos Getter e Setter
 
@@ -83,6 +98,14 @@ public class Posto {
 
     public void setBairro(String bairro) {
         this.bairro = bairro;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public String getImagem() {

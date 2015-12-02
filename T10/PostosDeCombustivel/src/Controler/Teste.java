@@ -14,6 +14,8 @@ import View.*;
  */
 public class Teste {
     public static void main(String[] args) {
+            
+        // Adicionar cada registro em nova posição do array
         
         try{
             String strFile = "C:\\Users\\LucasLima\\Documents\\Git\\ELC117_Paradigmas-Prog\\T10\\dados_postos.csv";

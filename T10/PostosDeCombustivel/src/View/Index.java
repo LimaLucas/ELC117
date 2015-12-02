@@ -94,6 +94,16 @@ public class Index extends javax.swing.JFrame {
                 jMenuCadastrarMenuSelected(evt);
             }
         });
+        jMenuCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuCadastrarMouseClicked(evt);
+            }
+        });
+        jMenuCadastrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jMenuCadastrarKeyPressed(evt);
+            }
+        });
         jMenuBar1.add(jMenuCadastrar);
 
         jMenuEditar.setText("Editar Posto");
@@ -187,7 +197,7 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnFiltrarActionPerformed
 
     private void jMenuCadastrarMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuCadastrarMenuSelected
-        new PostoView().setVisible(true);
+        
     }//GEN-LAST:event_jMenuCadastrarMenuSelected
 
     private void jMenuEditarMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenuEditarMenuSelected
@@ -220,6 +230,14 @@ public class Index extends javax.swing.JFrame {
         // TODO add your handling code here:
         //jMenuArqCombus.setEnabled(false);
     }//GEN-LAST:event_jMenuArqCombusActionPerformed
+
+    private void jMenuCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuCadastrarMouseClicked
+        new PostoView().setVisible(true);
+    }//GEN-LAST:event_jMenuCadastrarMouseClicked
+
+    private void jMenuCadastrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMenuCadastrarKeyPressed
+        new PostoView().setVisible(true);
+    }//GEN-LAST:event_jMenuCadastrarKeyPressed
 
     /**
      * @param args the command line arguments

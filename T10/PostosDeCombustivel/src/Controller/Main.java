@@ -15,31 +15,38 @@ import View.*;
 public class Main {
     public static void main(String[] args) {
         
-        TablePosto tableModel = new TablePosto();
-        
-        try{
-            String strFile = "src\\Files\\dados.csv";
-            
-            BufferedReader br = new BufferedReader( new FileReader(strFile));
-            String strLine = "";
-            StringTokenizer st = null;
-            int lineNumber = 0, columnNumber = 0;
-            
-            while((strLine = br.readLine()) != null){
-                lineNumber++;
-                st = new StringTokenizer(strLine, ",");
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
                 
-                while(lineNumber == 1 && st.hasMoreTokens()){
-                    columnNumber++;
-                    System.out.println("Line # " + lineNumber + ", Token # " + columnNumber + ", Token : "+ st.nextToken());
-                }
+                Index view = new Index();
+                view.setVisible(true);
                 
-                
-                
-                columnNumber = 0;
+                TablePosto tableModel = new TablePosto();
+
+                try{
+                    String strFile = "src\\Files\\dados.csv";
+
+                    BufferedReader br = new BufferedReader( new FileReader(strFile));
+                    String strLine = "";
+                    StringTokenizer st = null;
+                    int lineNumber = 0, columnNumber = 0;
+
+                    while((strLine = br.readLine()) != null){
+                        lineNumber++;
+                        st = new StringTokenizer(strLine, ",");
+
+                        while(lineNumber == 1 && st.hasMoreTokens()){
+                            columnNumber++;
+                        }
+
+
+
+                        columnNumber = 0;
+                    }
+                }catch(Exception e){
+                    System.out.println("Exceção durante leitura de arquivo CSV: " + e);
+                };
             }
-        }catch(Exception e){
-            System.out.println("Exceção durante leitura de arquivo CSV: " + e);
-        }
+        });
     }
 }

@@ -11,11 +11,14 @@ import javax.swing.ListSelectionModel;
  * @author LucasLima
  */
 public class Index extends javax.swing.JFrame {
-
+    
+    PostoController controller = new PostoController();
     TablePosto tablePostos = new TablePosto();
     
     public Index() {
         initComponents();
+        controller.inicializaDados(tablePostos);
+        
     }
 
     @SuppressWarnings("unchecked")

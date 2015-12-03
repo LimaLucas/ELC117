@@ -18,7 +18,7 @@ public class Main {
         TablePosto tableModel = new TablePosto();
         
         try{
-            String strFile = "C:\\Users\\LucasLima\\Documents\\Git\\ELC117_Paradigmas-Prog\\T10\\dados_postos.csv";
+            String strFile = "src\\Files\\dados.csv";
             
             BufferedReader br = new BufferedReader( new FileReader(strFile));
             String strLine = "";

@@ -101,6 +101,11 @@ public class Index extends javax.swing.JFrame {
 
         jMenuVisualizar.setText("Visualizar Posto");
         jMenuVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuVisualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuVisualizarMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenuVisualizar);
 
         jMenuHistorico.setText("Histório de Combustíveis");
@@ -172,6 +177,10 @@ public class Index extends javax.swing.JFrame {
     private void jMenuHistoricoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHistoricoMouseClicked
         new HistoricoView().setVisible(true);
     }//GEN-LAST:event_jMenuHistoricoMouseClicked
+
+    private void jMenuVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuVisualizarMouseClicked
+        
+    }//GEN-LAST:event_jMenuVisualizarMouseClicked
 
     /**		
 -     * @param args the command line arguments		

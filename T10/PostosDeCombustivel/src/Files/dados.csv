@@ -1,6 +1,6 @@
-ID,Nome Fantasia,Razão Social,CNPJ,Bandeira,Data de VinculaÃ§Ã£o a Distribuidor,Endereço,Bairro,CEP,Imagem
-1,Postos Bittencourt 1,AUTO POSTO BITTENCOURT LTDA.,00.162.288/0002-81,IPIRANGA,04/11/2009,"Rua alguma coisa - nº XX",Centro,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png
-2,Postos Bittencourt 2,AUTO POSTO BITTENCOURT LTDA.,00.162.288/0003-62,IPIRANGA,04/11/2009,"Rua tal - nº XX",Centro,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png
-3,Posto Dismabe,DISMABE COMÉRCIO DE COMBUSTIVEIS LTDA.,00.272.169/0001-09,RAIZEN,18/05/2011,"Rua sei lá - nº XXX",Camobi,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png
-4,Posto Siqueira,SIQUEIRA COMBUSTIVEIS – PIRELI,00.404.231/0001-60,RAIZEN,11/04/2014,"Rua desse posto - nº X",Centro,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png
-5,Posto Buemo,BUEMO COMBUSTÍVEIS LTDA.,01.172.249/0001-47,SUL COMBUSÍVEIS,15/06/2015,"Av. Alguma - nº XX",Camobi,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png
+ID,CNPJ,Razão Social,Nome Fantasia,Bandeira,Endereço,Bairro,CEP,Imagem
+1,00.162.288/0002-81,AUTO POSTO BITTENCOURT LTDA.,Postos Bittencourt 1,IPIRANGA,Rua alguma coisa - nº XX,Centro,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png
+2,00.162.288/0003-62,AUTO POSTO BITTENCOURT LTDA.,Postos Bittencourt 2,IPIRANGA,Rua tal - nº XX,Centro,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png
+3,00.272.169/0001-09,DISMABE COMÉRCIO DE COMBUSTIVEIS LTDA.,Posto Dismabe,RAIZEN,Rua sei lá - nº XXX,Camobi,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png
+4,00.404.231/0001-60,SIQUEIRA COMBUSTIVEIS – PIRELI,Posto Siqueira,RAIZEN,Rua desse posto - nº X,Centro,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png
+5,01.172.249/0001-47,BUEMO COMBUSTÍVEIS LTDA.,Posto Buemo,SUL COMBUSÍVEIS,Av. Alguma - nº XX,Camobi,970000-00,C:/Users/LucasLima/Documents/Git/ELC117_Paradigmas-Prog/T10/Imagem/posto.png

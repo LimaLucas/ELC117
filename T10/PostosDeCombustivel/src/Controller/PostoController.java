@@ -45,17 +45,7 @@ public class PostoController implements ActionListener {
                     
                     if(P != null)
                         tablePostos.add(P);
-                    
-//                    while(st.hasMoreTokens()){
-//                        P.setId(Integer.parseInt(st.nextToken()));
-//                        P.setCnpj(st.nextToken());
-//                        P.setRazaoSocial(st.nextToken());
-//                        P.setNomeFantasia(st.nextToken());
-//                        P.setBandeira(st.nextToken());
-//                        P.setEndereco(st.nextToken());
-//                        P.setBairro(st.nextToken());
-//                        P.setCep(st.nextToken());
-//                    }
+
                 }
             }
         }catch(Exception e){

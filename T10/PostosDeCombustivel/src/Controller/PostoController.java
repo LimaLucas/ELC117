@@ -20,7 +20,7 @@ public class PostoController implements ActionListener {
     
     public void inicializaDados(TablePosto tablePostos){
         
-        Posto P = new Posto();;
+        Posto P = new Posto();
         
         try{
             String strFile = "src\\Files\\dados.csv";
@@ -53,7 +53,14 @@ public class PostoController implements ActionListener {
     }
     
     public void visualizaPosto(TablePosto tablePostos, int indice){
-        new PostoView(tablePostos.select(indice)).setVisible(true);
+        PostoView PV = new PostoView(tablePostos.select(indice));
+        PV.setVisible(true);
+        // Desabilita Botões
+        PV.getBtnSalvar().setEnabled(false);
+        PV.getBtnCarregar().setEnabled(false);
+        PV.getBtnLimpar().setEnabled(false);
+        
+        
     }
 
     @Override

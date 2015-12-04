@@ -2,6 +2,8 @@ package View;
 
 import Controller.PostoController;
 import Model.Posto;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -37,8 +39,9 @@ public class PostoView extends javax.swing.JFrame {
         //</editor-fold>
         
         controller = new PostoController();
-        P = X; 
+        P = X;
         initComponents();
+        
     }
     
     public PostoView() {
@@ -69,7 +72,47 @@ public class PostoView extends javax.swing.JFrame {
         P = new Posto();
         initComponents();
     }
-
+    
+    public JButton getBtnSalvar(){
+        return jBtnSalvar;
+    }
+    
+    public JButton getBtnLimpar(){
+        return jBtnLimpar;
+    }
+    
+    public JButton getBtnCarregar(){
+        return jBtnCarregar;
+    }
+    
+    public JTextField getTxtRazao(){
+        return jTxtRazao;
+    }
+    
+    public JTextField getTxtNome(){
+        return jTxtNome;
+    }
+    
+    public JTextField getTxtBandeira(){
+        return jTxtBandeira;
+    }
+    
+    public JTextField getTxtCnpj(){
+        return jTxtCNPJ;
+    }
+    
+    public JTextField getTxtEndereco(){
+        return jTxtEndereco;
+    }
+    
+    public JTextField getTxtBairro(){
+        return jTxtBairro;
+    }
+    
+    public JTextField getTxtCep(){
+        return jTxtCEP;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -83,7 +126,7 @@ public class PostoView extends javax.swing.JFrame {
         jTxtBandeira = new javax.swing.JTextField();
         jTxtRazao = new javax.swing.JTextField();
         jTxtCNPJ = new javax.swing.JTextField();
-        jTxtFantasia = new javax.swing.JTextField();
+        jTxtNome = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -134,8 +177,8 @@ public class PostoView extends javax.swing.JFrame {
         jTxtCNPJ.setText(P.getCnpj());
         jTxtCNPJ.setPreferredSize(new java.awt.Dimension(69, 25));
 
-        jTxtFantasia.setText(P.getNomeFantasia());
-        jTxtFantasia.setPreferredSize(new java.awt.Dimension(69, 25));
+        jTxtNome.setText(P.getNomeFantasia());
+        jTxtNome.setPreferredSize(new java.awt.Dimension(69, 25));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -150,7 +193,7 @@ public class PostoView extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTxtFantasia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTxtNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTxtRazao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTxtCNPJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTxtBandeira, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -165,7 +208,7 @@ public class PostoView extends javax.swing.JFrame {
                     .addComponent(jTxtRazao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxtFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -339,7 +382,7 @@ public class PostoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCarregarActionPerformed
@@ -380,7 +423,7 @@ public class PostoView extends javax.swing.JFrame {
     private javax.swing.JTextField jTxtCEP;
     private javax.swing.JTextField jTxtCNPJ;
     private javax.swing.JTextField jTxtEndereco;
-    private javax.swing.JTextField jTxtFantasia;
+    private javax.swing.JTextField jTxtNome;
     private javax.swing.JTextField jTxtRazao;
     // End of variables declaration//GEN-END:variables
 }

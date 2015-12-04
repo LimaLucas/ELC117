@@ -4,6 +4,7 @@ import Controller.PostoController;
 import Model.Posto;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -42,6 +43,8 @@ public class PostoView extends javax.swing.JFrame {
         P = X;
         initComponents();
         
+        jLblImagem.setIcon(imgResize(P.getImagem(), 253, 200));
+        
     }
     
     public PostoView() {
@@ -71,6 +74,13 @@ public class PostoView extends javax.swing.JFrame {
         controller = new PostoController();
         P = new Posto();
         initComponents();
+    }
+    
+    private ImageIcon imgResize(String strImg, int x, int y){
+        ImageIcon img = new ImageIcon (strImg);
+        img.setImage(img.getImage().getScaledInstance(x, y, 250));
+        
+        return img;
     }
     
     public JButton getBtnSalvar(){
@@ -305,9 +315,9 @@ public class PostoView extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jBtnLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBtnLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBtnCarregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jBtnCarregar, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(

@@ -134,6 +134,11 @@ public class Index extends javax.swing.JFrame {
         jMenuExcluir.setText("Excluir Posto");
         jMenuExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuExcluir.setEnabled(false);
+        jMenuExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuExcluirMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenuExcluir);
 
         setJMenuBar(jMenuBar1);
@@ -202,7 +207,7 @@ public class Index extends javax.swing.JFrame {
 
     private void jTablePostosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePostosMouseClicked
         int row = jTablePostos.getSelectedRow();
-        if (row >= 0) {
+        if(row >= 0) {
             jMenuEditar.setEnabled(true);
             jMenuVisualizar.setEnabled(true);
             jMenuHistorico.setEnabled(true);
@@ -213,6 +218,12 @@ public class Index extends javax.swing.JFrame {
     private void jTablePostosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePostosMouseReleased
         jTablePostosMouseClicked(null);
     }//GEN-LAST:event_jTablePostosMouseReleased
+
+    private void jMenuExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuExcluirMouseClicked
+        int row = jTablePostos.getSelectedRow();
+        if(row >= 0)
+            controller.excluirPosto(tablePostos, row);
+    }//GEN-LAST:event_jMenuExcluirMouseClicked
 
     /**		
 -     * @param args the command line arguments		

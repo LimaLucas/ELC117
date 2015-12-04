@@ -60,7 +60,25 @@ public class PostoController implements ActionListener {
         PV.getBtnCarregar().setEnabled(false);
         PV.getBtnLimpar().setEnabled(false);
         
+        // Desabilita edição dos campos de texto
+        PV.getTxtBairro().setEditable(false);
+        PV.getTxtBandeira().setEditable(false);
+        PV.getTxtCep().setEditable(false);
+        PV.getTxtCnpj().setEditable(false);
+        PV.getTxtEndereco().setEditable(false);
+        PV.getTxtNome().setEditable(false);
+        PV.getTxtRazao().setEditable(false);
+    }
+    
+    public void excluirPosto(TablePosto tablePostos, int indice){
+        if(tablePostos.select(indice) != null)
+            tablePostos.remove(indice);
+    }
+    
+    public TablePosto editarPosto(TablePosto tablePostos, int indice){
+        // Implementar o que falta
         
+        return tablePostos;
     }
 
     @Override

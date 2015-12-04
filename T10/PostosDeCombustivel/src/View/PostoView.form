@@ -346,9 +346,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLblImagem" pref="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jBtnLimpar" max="32767" attributes="0"/>
+                          <Component id="jBtnLimpar" pref="117" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jBtnCarregar" max="32767" attributes="0"/>
+                          <Component id="jBtnCarregar" pref="129" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>

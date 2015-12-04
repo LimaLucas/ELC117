@@ -15,7 +15,17 @@ public class Posto {
     private String cep;
     private String imagem;
     
-    public Posto(){}
+    public Posto(){
+        this.id = 0;
+        this.cnpj = "";
+        this.razaoSocial = "";
+        this.nomeFantasia = "";
+        this.bandeira = "";
+        this.endereco = "";
+        this.bairro = "";
+        this.cep = "";
+        this.imagem = "";
+    }
 
     public Posto(int id, String cnpj, String razaoSocial, String nomeFantasia, String bandeira, String endereco, String bairro, String cep, String imagem) {
         this.id = id;

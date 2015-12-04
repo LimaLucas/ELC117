@@ -2,13 +2,13 @@ package Controller;
 
 import View.*;
 import Model.TablePosto;
+import Model.Posto;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.StringTokenizer;
-//import java.io.File;
-//import javax.swing.JFileChooser;
 
 /**
  *
@@ -19,26 +19,44 @@ public class PostoController implements ActionListener {
     public PostoController(){}
     
     public void inicializaDados(TablePosto tablePostos){
+        
+        Posto P = new Posto();;
+        
         try{
             String strFile = "src\\Files\\dados.csv";
 
             BufferedReader br = new BufferedReader( new FileReader(strFile));
             String strLine = "";
             StringTokenizer st = null;
-            int lineNumber = 0, columnNumber = 0;
+            int lineNumber = 0;
 
             while((strLine = br.readLine()) != null){
                 lineNumber++;
                 st = new StringTokenizer(strLine, ",");
+                
+                if(lineNumber == 1){
+                    while(st.hasMoreTokens()){
+                        st.nextToken();
+                    }
+                }else{
 
-                while(lineNumber == 1 && st.hasMoreTokens()){
-                    columnNumber++;
-                    st.nextToken();
+                    P = new Posto(Integer.parseInt(st.nextToken()), st.nextToken(), st.nextToken(), st.nextToken(), 
+                                  st.nextToken(), st.nextToken(), st.nextToken(), st.nextToken(), st.nextToken());
+                    
+                    if(P != null)
+                        tablePostos.add(P);
+                    
+//                    while(st.hasMoreTokens()){
+//                        P.setId(Integer.parseInt(st.nextToken()));
+//                        P.setCnpj(st.nextToken());
+//                        P.setRazaoSocial(st.nextToken());
+//                        P.setNomeFantasia(st.nextToken());
+//                        P.setBandeira(st.nextToken());
+//                        P.setEndereco(st.nextToken());
+//                        P.setBairro(st.nextToken());
+//                        P.setCep(st.nextToken());
+//                    }
                 }
-
-                System.out.println("Teste");
-
-                columnNumber = 0;
             }
         }catch(Exception e){
             System.out.println("Exceção durante leitura de arquivo CSV: " + e);

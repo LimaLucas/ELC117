@@ -17,8 +17,8 @@ public class Index extends javax.swing.JFrame {
     
     public Index() {
         initComponents();
+        jMenuImport.setVisible(false);
         controller.inicializaDados(tablePostos);
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -52,7 +52,12 @@ public class Index extends javax.swing.JFrame {
 
         jLabel1.setText("Filtrar postos por bairro:");
 
+        jTextField1.setEditable(false);
+        jTextField1.setText("ainda não implementado");
+        jTextField1.setEnabled(false);
+
         jBtnFiltrar.setText("Filtrar");
+        jBtnFiltrar.setEnabled(false);
         jBtnFiltrar.setPreferredSize(new java.awt.Dimension(67, 30));
 
         jTablePostos.setBorder(javax.swing.BorderFactory.createEtchedBorder());

@@ -45,12 +45,15 @@ public class PostoController implements ActionListener {
                     
                     if(P != null)
                         tablePostos.add(P);
-
                 }
             }
         }catch(Exception e){
             System.out.println("Exceção durante leitura de arquivo CSV: " + e);
         };
+    }
+    
+    public void visualizaPosto(TablePosto tablePostos, int indice){
+        new PostoView(tablePostos.select(indice)).setVisible(true);
     }
 
     @Override

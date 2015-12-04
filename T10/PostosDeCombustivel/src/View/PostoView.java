@@ -1,11 +1,46 @@
 package View;
 
+import Controller.PostoController;
+import Model.Posto;
+
 /**
  *
  * @author LucasLima
  */
 public class PostoView extends javax.swing.JFrame {
 
+    PostoController controller;
+    Posto P;
+    
+    public PostoView(Posto X){
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PostoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PostoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PostoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PostoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        
+        controller = new PostoController();
+        P = X; 
+        initComponents();
+    }
+    
     public PostoView() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -29,7 +64,9 @@ public class PostoView extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(PostoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
+        controller = new PostoController();
+        P = new Posto();
         initComponents();
     }
 
@@ -88,12 +125,16 @@ public class PostoView extends javax.swing.JFrame {
 
         jLabel7.setText("CNPJ:");
 
+        jTxtBandeira.setText(P.getBandeira());
         jTxtBandeira.setPreferredSize(new java.awt.Dimension(69, 25));
 
+        jTxtRazao.setText(P.getRazaoSocial());
         jTxtRazao.setPreferredSize(new java.awt.Dimension(69, 25));
 
+        jTxtCNPJ.setText(P.getCnpj());
         jTxtCNPJ.setPreferredSize(new java.awt.Dimension(69, 25));
 
+        jTxtFantasia.setText(P.getNomeFantasia());
         jTxtFantasia.setPreferredSize(new java.awt.Dimension(69, 25));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -145,10 +186,13 @@ public class PostoView extends javax.swing.JFrame {
 
         jLabel3.setText("CEP:");
 
+        jTxtBairro.setText(P.getBairro());
         jTxtBairro.setPreferredSize(new java.awt.Dimension(69, 25));
 
+        jTxtEndereco.setText(P.getEndereco());
         jTxtEndereco.setPreferredSize(new java.awt.Dimension(69, 25));
 
+        jTxtCEP.setText(P.getCep());
         jTxtCEP.setPreferredSize(new java.awt.Dimension(69, 25));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

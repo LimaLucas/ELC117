@@ -12,10 +12,13 @@ import javax.swing.ListSelectionModel;
  */
 public class Index extends javax.swing.JFrame {
     
-    PostoController controller = new PostoController();
-    TablePosto tablePostos = new TablePosto();
+    PostoController controller;
+    TablePosto tablePostos;
     
     public Index() {
+        controller = new PostoController();
+        tablePostos = new TablePosto();
+        
         initComponents();
         jMenuImport.setVisible(false);
         controller.inicializaDados(tablePostos);
@@ -62,6 +65,14 @@ public class Index extends javax.swing.JFrame {
 
         jTablePostos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jTablePostos.setModel(tablePostos);
+        jTablePostos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTablePostosMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jTablePostosMouseReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTablePostos);
 
         jMenuImport.setText("Importar CSV");
@@ -97,10 +108,12 @@ public class Index extends javax.swing.JFrame {
 
         jMenuEditar.setText("Editar Posto");
         jMenuEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuEditar.setEnabled(false);
         jMenuBar1.add(jMenuEditar);
 
         jMenuVisualizar.setText("Visualizar Posto");
         jMenuVisualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuVisualizar.setEnabled(false);
         jMenuVisualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenuVisualizarMouseClicked(evt);
@@ -110,6 +123,7 @@ public class Index extends javax.swing.JFrame {
 
         jMenuHistorico.setText("Histório de Combustíveis");
         jMenuHistorico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuHistorico.setEnabled(false);
         jMenuHistorico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenuHistoricoMouseClicked(evt);
@@ -119,6 +133,7 @@ public class Index extends javax.swing.JFrame {
 
         jMenuExcluir.setText("Excluir Posto");
         jMenuExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuExcluir.setEnabled(false);
         jMenuBar1.add(jMenuExcluir);
 
         setJMenuBar(jMenuBar1);
@@ -134,9 +149,9 @@ public class Index extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBtnFiltrar, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)))
+                        .addComponent(jBtnFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -179,8 +194,25 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuHistoricoMouseClicked
 
     private void jMenuVisualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuVisualizarMouseClicked
-        
+        int row = jTablePostos.getSelectedRow();
+        if (row >= 0) {
+            controller.visualizaPosto(tablePostos, row);
+        }
     }//GEN-LAST:event_jMenuVisualizarMouseClicked
+
+    private void jTablePostosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePostosMouseClicked
+        int row = jTablePostos.getSelectedRow();
+        if (row >= 0) {
+            jMenuEditar.setEnabled(true);
+            jMenuVisualizar.setEnabled(true);
+            jMenuHistorico.setEnabled(true);
+            jMenuExcluir.setEnabled(true);
+        }
+    }//GEN-LAST:event_jTablePostosMouseClicked
+
+    private void jTablePostosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePostosMouseReleased
+        jTablePostosMouseClicked(null);
+    }//GEN-LAST:event_jTablePostosMouseReleased
 
     /**		
 -     * @param args the command line arguments		
